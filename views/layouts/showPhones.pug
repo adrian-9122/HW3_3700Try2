@@ -1,0 +1,23 @@
+include layout
+html
+    head
+        title Inventory
+    body
+        br
+        div.container
+            h2 Current Phone Inventory
+            table.table.table-striped
+                tr
+                tr
+                    th Manufacturer
+                    th Item
+                    th Price
+                each item in inventory
+                    if item.id != 0
+                        tr
+                            td= item.manufact
+                            td= item.item
+                            td= item.price
+                            td
+                                form(action=`/item/${item.id}` method='get')
+                                     button(type='submit' class='btn btn-primary') Item Details
